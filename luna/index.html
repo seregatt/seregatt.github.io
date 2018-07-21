@@ -1,0 +1,949 @@
+﻿
+<!DOCTYPE html>
+<!-- Sorry no IE7 support! -->
+<!-- @see http://foundation.zurb.com/docs/index.html#basicHTMLMarkup -->
+
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" dir="ltr"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<link href="https://www.foreo.com/ja/luna-mini-2" rel="alternate" hreflang="ja" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link name="msapplication-square310x310logo" content="/sites/all/themes/foreo_theme/images/mobile-icon-192x192.png" />
+<link rel="icon" sizes="192x192" href="/sites/all/themes/foreo_theme/images/mobile-icon-192x192.png" />
+<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/foreo_theme/images/mobile-icon-192x192.png" />
+<link rel="shortcut icon" href="https://www.foreo.com/sites/default/files/FOREO.ico" type="image/vnd.microsoft.icon" />
+<link href="https://www.foreo.com/ar/luna-mini-2" rel="alternate" hreflang="ar" />
+<link href="https://www.foreo.com/ko/luna-mini-2" rel="alternate" hreflang="ko" />
+<meta http-equiv="ImageToolbar" content="false" />
+<link href="https://www.foreo.com/zh-hant/luna-mini-2" rel="alternate" hreflang="zh-hant" />
+<link href="https://www.foreo.com/zh-hans/luna-mini-2" rel="alternate" hreflang="zh-hans" />
+<link href="https://www.foreo.com/tr/luna-mini-2" rel="alternate" hreflang="tr" />
+<link href="https://www.foreo.com/ru/luna-mini-2" rel="alternate" hreflang="ru" />
+<link href="https://www.foreo.com/nl/luna-mini-2" rel="alternate" hreflang="nl" />
+<link href="https://www.foreo.com/sv/luna-mini-2" rel="alternate" hreflang="sv" />
+<link href="https://www.foreo.com/luna-mini-2" rel="alternate" hreflang="en" />
+<link href="https://www.foreo.com/pl/luna-mini-2" rel="alternate" hreflang="pl" />
+<link href="https://www.foreo.com/de/luna-mini-2" rel="alternate" hreflang="de" />
+<link href="https://www.foreo.com/es/luna-mini-2" rel="alternate" hreflang="es" />
+<link href="https://www.foreo.com/fr/luna-mini-2" rel="alternate" hreflang="fr" />
+<link href="https://www.foreo.com/it/luna-mini-2" rel="alternate" hreflang="it" />
+<link href="https://www.foreo.com/pt-br/luna-mini-2" rel="alternate" hreflang="pt-br" />
+<link href="https://www.foreo.com/hr/luna-mini-2" rel="alternate" hreflang="hr" />
+<meta name="description" content="The LUNA mini 2 is an enhanced T- Sonic face brush with 8 adjustable intensities for a fully customizable cleansing experience. The updated 3-zone face brush is optimized for all skin types and comes in 5 exciting new colors." />
+<meta name="keywords" content="LUNA mini, LUNA mini 2, FOREO LUNA mini, face brush, facial brush, electric face brush" />
+<link rel="canonical" href="https://www.foreo.com/luna-mini-2" />
+<link rel="shortlink" href="https://www.foreo.com/node/317707" />
+<meta property="og:site_name" content="FOREO" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="A Color For Every Personality" />
+<meta property="og:url" content="https://www.foreo.com/luna-mini-2" />
+<meta property="og:description" content="Pamper your skin with revolutionary technology." />
+<meta property="og:updated_time" content="2018-06-14T14:54:16+00:00" />
+<meta property="og:image" content="https://www.foreo.com/sites/default/files/Luna-mini-2-Social-Share2.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@FOREO" />
+<meta name="twitter:site:id" content="1088495833" />
+<meta name="twitter:url" content="https://www.foreo.com/luna-mini-2" />
+<meta name="twitter:title" content="LUNA mini 2" />
+<meta name="twitter:description" content="The LUNA mini 2 is an enhanced T-Sonic™ face brush with eight adjustable intensities for a fully customizable cleansing experience. The updated 3-zone face brush is optimized for all skin types and comes in six exciting new colors." />
+<meta name="twitter:image" content="https://www.foreo.com/sites/default/files/Luna-mini-2-Social-Share2.png" />
+<meta property="article:published_time" content="2015-12-26T13:02:50+00:00" />
+<meta property="article:modified_time" content="2018-06-14T14:54:16+00:00" />
+  <title>LUNA mini 2 Sonic Face Brush for All Skin Types | FOREO</title>
+  <style type="text/css" media="all">
+@import url("https://www.foreo.com/modules/system/system.base.css?pc6ck2");
+@import url("https://www.foreo.com/modules/system/system.messages.css?pc6ck2");
+@import url("https://www.foreo.com/modules/system/system.theme.css?pc6ck2");
+</style>
+<style type="text/css" media="all">
+@import url("https://www.foreo.com/sites/all/modules/contrib/colorbox_node/colorbox_node.css?pc6ck2");
+@import url("https://www.foreo.com/modules/comment/comment.css?pc6ck2");
+@import url("https://www.foreo.com/sites/all/modules/contrib/date/date_api/date.css?pc6ck2");
+@import url("https://www.foreo.com/sites/all/modules/contrib/date/date_popup/themes/datepicker.1.7.css?pc6ck2");
+@import url("https://www.foreo.com/modules/field/theme/field.css?pc6ck2");
+@import url("https://www.foreo.com/modules/node/node.css?pc6ck2");
+@import url("https://www.foreo.com/sites/all/modules/contrib/picture/picture_wysiwyg.css?pc6ck2");
+@import url("https://www.foreo.com/modules/user/user.css?pc6ck2");
+@import url("https://www.foreo.com/sites/all/modules/contrib/views/css/views.css?pc6ck2");
+@import url("https://www.foreo.com/sites/all/modules/contrib/ckeditor/css/ckeditor.css?pc6ck2");
+</style>
+<style type="text/css" media="all">
+@import url("https://www.foreo.com/sites/all/modules/contrib/colorbox/styles/plain/colorbox_style.css?pc6ck2");
+@import url("https://www.foreo.com/sites/all/modules/contrib/ctools/css/ctools.css?pc6ck2");
+@import url("https://www.foreo.com/sites/all/modules/contrib/dhtml_menu/dhtml_menu.css?pc6ck2");
+@import url("https://www.foreo.com/sites/all/modules/contrib/field_slide_show_j360/css/threesixty.css?pc6ck2");
+</style>
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+.lifestyle-block-317731 .lifestyle-title,.lifestyle-block-317731 .lifestyle-description p{color:#ffffff!important;}.lifestyle-block-317734 .lifestyle-title,.lifestyle-block-317734 .lifestyle-description p{color:#ffffff!important;}
+.node-type-product-display .features{background-image:url(https://www.foreo.com/sites/default/files/features_block.jpg);}
+
+/*]]>*/-->
+</style>
+<style type="text/css" media="all">
+@import url("https://www.foreo.com/sites/all/modules/contrib/fivestar/css/fivestar.css?pc6ck2");
+@import url("https://www.foreo.com/sites/all/modules/contrib/fivestar/widgets/outline/outline.css?pc6ck2");
+@import url("https://www.foreo.com/sites/all/modules/contrib/commerce_price_savings_formatter/theme/commerce_price_savings_formatter.css?pc6ck2");
+@import url("https://www.foreo.com/sites/all/modules/contrib/commerce_fancy_attributes/commerce_fancy_attributes.css?pc6ck2");
+</style>
+<style type="text/css" media="all">
+@import url("css/STARTER.min.css?pc6ck2");
+</style>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2"></script>
+<script type="text/javascript" src="https://www.foreo.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://www.foreo.com/misc/drupal.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://www.foreo.com/misc/ajax.js?v=7.59"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+document.createElement( "picture" );
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/authcache/authcache.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/libraries/colorbox/jquery.colorbox-min.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/colorbox/js/colorbox.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/colorbox/styles/plain/colorbox_style.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/colorbox/js/colorbox_load.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/dhtml_menu/dhtml_menu.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/misc/progress.js?v=7.59"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/custom/foreo/js/foreo.ajax.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/field_slide_show_j360/js/trigger.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/libraries/drupal_threesixty_slider/drupal-threesixty-slider.1.0.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/authcache/modules/authcache_menu/authcache_menu.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/custom/foreo_datalayer/js/datalayers.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/fivestar/js/fivestar.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/commerce_product_urls/commerce_product_urls.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/commerce_fancy_attributes/commerce_fancy_attributes.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/libraries/jquery.placeholder/jquery.placeholder.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/form_placeholder/form_placeholder.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/datalayer/datalayer.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/themes/foreo_theme/js/contrib/fullPage/jquery.fullPage.min.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/views/js/base.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/views/js/ajax_view.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/colorbox_node/colorbox_node.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/themes/zurb_foundation/js/vendor/modernizr.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/themes/zurb_foundation/js/foundation.min.js?pc6ck2"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/themes/foreo_theme/js/min/script.min.js?pc6ck2"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"foreo_theme","theme_token":"bh5iLLYjVZAyJvc19d5rgkTdEasPPgb3zdnZFCcMlNE","jquery_version":"1.10","js":{"sites\/all\/modules\/contrib\/picture\/picturefill2\/picturefill.min.js":1,"sites\/all\/modules\/contrib\/picture\/picture.min.js":1,"0":1,"public:\/\/google_tag\/language\/google_tag.en.script.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"1":1,"sites\/all\/modules\/contrib\/authcache\/authcache.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/plain\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/dhtml_menu\/dhtml_menu.js":1,"misc\/progress.js":1,"sites\/all\/modules\/custom\/foreo\/js\/foreo.ajax.js":1,"sites\/all\/modules\/contrib\/field_slide_show_j360\/js\/trigger.js":1,"sites\/all\/libraries\/drupal_threesixty_slider\/drupal-threesixty-slider.1.0.js":1,"sites\/all\/modules\/contrib\/authcache\/modules\/authcache_menu\/authcache_menu.js":1,"2":1,"sites\/all\/modules\/custom\/foreo_datalayer\/js\/datalayers.js":1,"sites\/all\/modules\/contrib\/fivestar\/js\/fivestar.js":1,"sites\/all\/modules\/contrib\/commerce_product_urls\/commerce_product_urls.js":1,"sites\/all\/modules\/contrib\/commerce_fancy_attributes\/commerce_fancy_attributes.js":1,"sites\/all\/libraries\/jquery.placeholder\/jquery.placeholder.js":1,"sites\/all\/modules\/contrib\/form_placeholder\/form_placeholder.js":1,"sites\/all\/modules\/contrib\/datalayer\/datalayer.js":1,"sites\/all\/themes\/foreo_theme\/js\/contrib\/fullPage\/jquery.fullPage.min.js":1,"sites\/all\/modules\/contrib\/views\/js\/base.js":1,"sites\/all\/modules\/contrib\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/contrib\/colorbox_node\/colorbox_node.js":1,"sites\/all\/themes\/zurb_foundation\/js\/vendor\/modernizr.js":1,"sites\/all\/themes\/zurb_foundation\/js\/foundation.min.js":1,"sites\/all\/themes\/foreo_theme\/js\/min\/script.min.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/colorbox_node\/colorbox_node.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/picture\/picture_wysiwyg.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/plain\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/dhtml_menu\/dhtml_menu.css":1,"sites\/all\/modules\/contrib\/field_slide_show_j360\/css\/threesixty.css":1,"0":1,"1":1,"sites\/all\/modules\/contrib\/fivestar\/css\/fivestar.css":1,"sites\/all\/modules\/contrib\/fivestar\/widgets\/outline\/outline.css":1,"sites\/all\/modules\/contrib\/commerce_price_savings_formatter\/theme\/commerce_price_savings_formatter.css":1,"sites\/all\/modules\/contrib\/commerce_fancy_attributes\/commerce_fancy_attributes.css":1,"sites\/all\/themes\/foreo_theme\/css\/normalize.css":1,"sites\/all\/themes\/foreo_theme\/css\/foundation.min.css":1,"sites\/all\/themes\/foreo_theme\/css\/STARTER.min.css":1}},"authcache":{"q":"node\/317707","cp":{"path":"\/","domain":".foreo.com","secure":true},"cl":23.14814814814815},"colorbox":{"transition":"none","speed":"350","opacity":"0.85","slideshow":false,"slideshowAuto":true,"slideshowSpeed":"2500","slideshowStart":"start slideshow","slideshowStop":"stop slideshow","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","overlayClose":true,"returnFocus":true,"maxWidth":"98%","maxHeight":"98%","initialWidth":"640px","initialHeight":"640px","fixed":true,"scrolling":false,"mobiledetect":true,"mobiledevicewidth":"480px"},"dhtmlMenu":{"nav":"open","animation":{"effects":{"height":"height","opacity":"opacity","width":0},"speed":"500"},"effects":{"siblings":"close-same-tree","children":"none","remember":""},"filter":{"type":"whitelist","list":{"menu-press":"menu-press","main-menu":0,"management":0,"menu-categories":0,"menu-cc-menu":0,"menu-company":0,"menu-footer-collections":0,"menu-quick-administration-center":0,"menu-support":0,"navigation":0,"user-menu":0}}},"smart_ip":{"location":{"country":"Georgia","country_code":"GE","city":"Tbilisi","zip":null,"region_code":"19","region":"Dushet\u0027is Raioni","latitude":41.724999999999994,"longitude":44.79079999999999,"time_zone":"","source":"smart_ip","ip_address":"188.169.245.39","timestamp":1532107866}},"smart_ip_src":{"smart_ip":"smart_ip","geocoded_smart_ip":"geocoded_smart_ip","w3c":"w3c"},"commerceProductURLs":{"updateURLFallback":1,"product_id":"id=1261"},"ajaxGetFormCallbacks":["commerce_cart_add_to_cart_form_attributes_refresh","foreo_skin_care_callback","foreo_skin_care_luna2_callback","foreo_skin_care_lunago_callback"],"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:1139cd39e997a1f1f4b63519d0b843ea":{"view_name":"product_reviews","view_display_id":"entity_view_2","view_args":"317707","view_path":"node\/317707","view_base_path":"node\/317707","view_dom_id":"1139cd39e997a1f1f4b63519d0b843ea","pager_element":0}}},"urlIsAjaxTrusted":{"\/views\/ajax":true,"\/luna-mini-2?_drupal_ajax=1":true,"\/cart\/add":true,"\/system\/newsletter":true,"\/luna-mini-2":true},"currentPath":"node\/317707","currentPathIsAdmin":false,"ajax":{"edit-attributes-field-colors-340":{"callback":"commerce_cart_add_to_cart_form_attributes_refresh","event":"change","url":"\/luna-mini-2?_drupal_ajax=1","submit":{"_triggering_element_name":"attributes[field_colors]"}},"edit-attributes-field-colors-334":{"callback":"commerce_cart_add_to_cart_form_attributes_refresh","event":"change","url":"\/luna-mini-2?_drupal_ajax=1","submit":{"_triggering_element_name":"attributes[field_colors]"}},"edit-attributes-field-colors-349":{"callback":"commerce_cart_add_to_cart_form_attributes_refresh","event":"change","url":"\/luna-mini-2?_drupal_ajax=1","submit":{"_triggering_element_name":"attributes[field_colors]"}},"edit-attributes-field-colors-331":{"callback":"commerce_cart_add_to_cart_form_attributes_refresh","event":"change","url":"\/luna-mini-2?_drupal_ajax=1","submit":{"_triggering_element_name":"attributes[field_colors]"}},"edit-attributes-field-colors-337":{"callback":"commerce_cart_add_to_cart_form_attributes_refresh","event":"change","url":"\/luna-mini-2?_drupal_ajax=1","submit":{"_triggering_element_name":"attributes[field_colors]"}},"edit-attributes-field-colors-465":{"callback":"commerce_cart_add_to_cart_form_attributes_refresh","event":"change","url":"\/luna-mini-2?_drupal_ajax=1","submit":{"_triggering_element_name":"attributes[field_colors]"}},"edit-submit--3":{"callback":"foreo_newsletter_subscribe_form_callback","wrapper":"foreo-newsletter-subscribe-form-footer-newsletter-form","event":"mousedown","keypress":true,"prevent":"click","url":"\/system\/newsletter","submit":{"_triggering_element_name":"op","_triggering_element_value":"Let\u0027s stay in touch!"}}},"form_placeholder":{"fallback_support":true,"include":"input","exclude":".node-form *,#bean-form *,#commerce-product-ui-product-form *,.newsletter-email,.page-admin *,.webform-client-form *,#edit-coupon-code,.page-user-warranty-claim *,#commerce-checkout-form-checkout *","required_indicator":"append"},"colorbox_node":{"width":"600px","height":"600px"},"dataLayer":{"languages":{"en":{"language":"en","name":"English","native":"English","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"","weight":"-10","javascript":""},"de":{"language":"de","name":"German","native":"Deutsch","direction":"0","enabled":"1","plurals":"2","formula":"($n!=1)","domain":"","prefix":"de","weight":"-9","javascript":"1V6akNY8Nblf-Tdh2tsSuOysvRBibgl7o4hq7ULMM6w"},"es":{"language":"es","name":"Spanish","native":"Espa\u00f1ol","direction":"0","enabled":"1","plurals":"2","formula":"($n!=1)","domain":"","prefix":"es","weight":"-8","javascript":"N9tuYj6UeW01o0bbAFEDMFbJG3Lclrv6R7PSapHkleM"},"fr":{"language":"fr","name":"French","native":"Fran\u00e7ais","direction":"0","enabled":"1","plurals":"2","formula":"($n\u003E1)","domain":"","prefix":"fr","weight":"-7","javascript":"GSGFQhUSRct2pXiLGKu0a8s5S0X02ep6S9B56cK-Lhc"},"it":{"language":"it","name":"Italian","native":"Italiano","direction":"0","enabled":"1","plurals":"2","formula":"($n!=1)","domain":"","prefix":"it","weight":"-6","javascript":"IJyJVGluYp8JDgY2CpecCdxMR9tCCLLKwsWSe49fmqY"},"pt-br":{"language":"pt-br","name":"Portuguese, Brazil","native":"Portugu\u00eas (BR)","direction":"0","enabled":"1","plurals":"2","formula":"($n!=1)","domain":"","prefix":"pt-br","weight":"-5","javascript":"3xGvebFUvo590plYKrpdjxzuXDFl7wcuWgFU_n5WkOk"},"hr":{"language":"hr","name":"Croatian","native":"Hrvatski","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"hr","weight":"-4","javascript":"LPrdyS0ZUL9So3-3-chRcgqPEwVyjZdNvQWWMK8zMzU"},"pl":{"language":"pl","name":"Polish","native":"Polski","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"pl","weight":"-3","javascript":"XAGuJPbA1FQdxoZ_lievjmR-vkT-qVXHJo6H11A2db8"},"sv":{"language":"sv","name":"Swedish","native":"Svenska","direction":"0","enabled":"1","plurals":"2","formula":"($n!=1)","domain":"","prefix":"sv","weight":"-2","javascript":"Ag_kk6M43iAnSKjV8uwBDiDmZSMKyriYHAygKEcfOTQ"},"nl":{"language":"nl","name":"Dutch","native":"Nederlands","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"nl","weight":"-1","javascript":"NxZ1mRERDmUGOvDZWPT6l3QBZgJHEJYVqLlzQsAGRUE"},"ru":{"language":"ru","name":"Russian","native":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","direction":"0","enabled":"1","plurals":"3","formula":"(((($n%10)==1)\u0026\u0026(($n%100)!=11))?(0):((((($n%10)\u003E=2)\u0026\u0026(($n%10)\u003C=4))\u0026\u0026((($n%100)\u003C10)||(($n%100)\u003E=20)))?(1):2))","domain":"","prefix":"ru","weight":"0","javascript":"6LZzODe_lKXYjkgXD8yFqZwyWbmgMG7xB9qX9Pq6RjA"},"tr":{"language":"tr","name":"Turkish","native":"T\u00fcrk\u00e7e","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"tr","weight":"1","javascript":"8pVJrsnKLd1YylxrLMdGf-6Pu3ZlYazNAGudEXtcuKA"},"zh-hans":{"language":"zh-hans","name":"Chinese, Simplified","native":"\u7b80\u4f53\u4e2d\u6587","direction":"0","enabled":"1","plurals":"2","formula":"($n!=1)","domain":"","prefix":"zh-hans","weight":"2","javascript":"K0PayBQul52GSdYxCXX3ra25q_H0US2q6FiVOmpTU2w"},"zh-hant":{"language":"zh-hant","name":"Chinese, Traditional","native":"\u7e41\u9ad4\u4e2d\u6587","direction":"0","enabled":"1","plurals":"2","formula":"($n\u003E1)","domain":"","prefix":"zh-hant","weight":"3","javascript":"UWtYhAQpsevvCQC9IOKBY9jFfWNkUP9oMxVKhLRzcus"},"ja":{"language":"ja","name":"Japanese","native":"\u65e5\u672c\u8a9e","direction":"0","enabled":"1","plurals":"2","formula":"($n!=1)","domain":"","prefix":"ja","weight":"4","javascript":"-qnVduYA6ndKZWLNhTw7MUTyKIN0JKC9mIZ7gEdp9fI"},"ko":{"language":"ko","name":"Korean","native":"\ud55c\uad6d\uc5b4","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"ko","weight":"5","javascript":"djJmQRvJBUOcjtUqZ6lwrvgSPzktuJ2VfBz-wJVNUZI"},"ar":{"language":"ar","name":"Arabic","native":"\u0627\u0644\u0639\u0631\u0628\u064a\u0629","direction":"1","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"ar","weight":"6","javascript":"l1HGfdGbhEoFaR4TUDpLwto8-kzPJkgH5W2sFoq4NyQ"},"ro":{"language":"ro","name":"Romanian","native":"Rom\u00e2n\u0103","direction":"0","enabled":"0","plurals":"0","formula":"","domain":"","prefix":"ro","weight":"7","javascript":""},"pt-pt":{"language":"pt-pt","name":"Portuguese, Portugal","native":"Portugu\u00eas","direction":"0","enabled":"0","plurals":"0","formula":"","domain":"","prefix":"pt-pt","weight":"8","javascript":"FZeynTcVAqSi-bHLFIFKdAxxXtJHnV7L8hPNLeKA0jo"}}}});
+//--><!]]>
+</script>
+
+  <!--[if lt IE 9]>
+		<script src="https://www.foreo.com/sites/all/themes/foreo_theme/js/html5shiv.js"></script>
+	<![endif]-->
+
+  
+
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-317707 node-type-product-display i18n-en lang-en section-luna-mini-2 top-bar-active" >
+	<div class="skip-link">
+		<a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+	</div>
+  <!-- Promo bar with countdown -->
+	<div class="top-bar">
+		<p>FREE DELIVERY ON ORDERS OVER $50!</p>
+	</div>
+<div role="document" class="page">
+
+	<main role="main" class="l-main ">
+		<div class=" main">
+			<a id="main-content"></a>
+            <ul class="action-links"></ul>
+			<article id="node-317707" class="node node-product-display commerce-product-url-product-display view-mode-full" about="/luna-mini-2" typeof="sioc:Item foaf:Document">
+				<div id="back-to-top">
+					<div class="row">
+						<div class="small-10 medium-9 columns">
+							<span class="title"><div class="word-wrap">
+							<span class="word-1 word-luna">LUNA </span><span class="word-2 word-mini">mini </span><span class="word-3 word-2">2 </span>     </div>   </span>
+							<span class="sub_title"></span>
+						</div>
+						<div class="small-2 medium-3 columns sticky-holder">
+							<span class="back-commerce"><a href="#" id="back-top-desktop">BUY NOW</a></span>
+						</div>
+					</div>
+				</div>
+    
+
+	
+				<div class="lifestyle-block-317731 lifestyle-block-position-1">
+					<div class="lifestyle left_align" style="background-color: #fcb708">
+						<div class="lifestyle-background">
+							<div class="field field-name-field-mood-image field-type-image field-label-hidden field-wrapper">
+								<div class="field-items" class="field-items">
+									<div class="field-item even" class="field-item even"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/field/image/lifestyle-main/lifestyle_block_1.jpg" width="1920" height="700" alt="" /></div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="small-12 medium-6 columns lifestyle-text-holder">
+								<div class="lifestyle-content">
+									<div class="lifestyle-title">
+										<div class="field field-name-title-field field-type-text field-label-hidden field-wrapper">
+											<div class="field-items" class="field-items">
+												<div class="field-item even" class="field-item even">YOU’RE <b>1 MINUTE </b> <br> AWAY FROM <br> <b>CLEAR SKIN</b></div>
+											</div>
+										</div>
+									</div>
+									<div class="lifestyle-description">
+										<div class="field field-name-field-mood-body field-type-text-long field-label-hidden field-wrapper">
+											<div class="field-items" class="field-items">
+												<div class="field-item even" class="field-item even"><p>The revolutionary LUNA mini 2 sonic face brush eliminates blemish-causing impurities while remaining extremely gentle on the skin. All it takes is one minute twice a day for a fresh, clear and even-looking complexion.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+	
+			  
+				<section class="full-width-video-container">
+					<div class="loop-video">
+						<script src="https://fast.wistia.com/embed/medias/ipak8yuboe.jsonp" async></script>
+						<script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+						<div class="wistia_responsive_padding" style="padding:15.5% 0 0 0;position:relative;">
+							<div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+								<div class="wistia_embed wistia_async_ipak8yuboe videoFoam=true" style="height:100%;width:100%">&nbsp;</div>
+							</div>
+						</div>
+					</div>
+				  
+					<div class="wistia-video">
+						<script src="https://fast.wistia.com/embed/medias/ipak8yuboe.jsonp" async></script>
+						<script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+						<div class="wistia_responsive_padding" style="padding:15.5% 0 0 0;position:relative;">
+							<div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+								<div class="wistia_embed wistia_async_ipak8yuboe videoFoam=true" style="height:100%;width:100%">&nbsp;</div>
+							</div>
+						</div>
+					</div>
+				</section>
+	
+				<div class="clinical_results">
+					<div class="clinical-result field-item even" class="field-item even">
+						<div class="row">
+							<div class="small-12 columns">
+								<div id="node-318031" class="node node-clinical-results view-mode-default" about="/node/318031" typeof="sioc:Item foaf:Document">
+									<div class="field field-name-field-body-plain-1 field-type-text-long field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even"><h2><strong>CUSTOMIZABLE</strong> SKINCARE SYSTEM</h2>
+												<p>The LUNA mini 2’s 3-zone face brush is now 50% larger and made with softer silicone for a cleansing experience suitable for every skin type. Choose from eight intensities to find what works for you.</p>
+											</div>
+										</div>
+									</div>
+									<div class="field field-name-field-mood-image field-type-image field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/LUNAmini2-PP-ClinicalResultsBlockimage%28390%E2%80%86%C3%97%E2%80%86400%29.png" width="390" height="400" alt="The LUNA mini 2’s 3-zone face brush is now 50% larger" title="The LUNA mini 2’s 3-zone face" /></div>
+										</div>
+									</div>
+									<div class="field field-name-field-body-plain-2 field-type-text-long field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even"><h2>GENTLE YET <strong>EFFECTIVE </strong>CLEANSING</h2>
+												<p>The T-Sonic pulsations deliver the unique ability to remove 99.5% of dirt and oil, as well as makeup residue and dead skin cells, and exfoliate without irritating the skin.</p>
+											</div>
+										</div>
+									</div>
+									<div class="row"></div>
+									<div class="results">
+										<div class="field field-name-field-subtitle field-type-text field-label-hidden field-wrapper">
+											<div class="field-items" class="field-items">
+												<div class="field-item even" class="field-item even">USERS EXPERIENCED:</div>
+											</div>
+										</div>
+										<div class="field field-name-field-textarea-max3 field-type-text-long field-label-hidden field-wrapper">
+											<div class="field-items" class="field-items">
+												<div class="field-item even" class="field-item even">
+													<h4>97%</h4>
+													<p>MORE DEEPLY CLEANSED SKIN</p>
+												</div>
+												<div class="field-item odd" class="field-item even odd">
+													<h4>97%</h4>
+													<p>SOFTER &amp; SMOOTHER SKIN</p>
+												</div>
+												<div class="field-item even" class="field-item even odd even">
+													<h4>87%</h4>
+													<p>HEALTHIER-LOOKING SKIN</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+	
+	
+				<div class="features">
+					<div class="small-12 columns">
+						<ul class="small-block-grid-1 medium-block-grid-3">
+							<li class="field-item even" class="field-item even">
+								<div id="node-318067" class="node node-product-features view-mode-default" about="/node/318067" typeof="sioc:Item foaf:Document">
+									<div class="field field-name-field-feature-icon field-type-image field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/styles/thumbnail/public/1_tsonic_16.png?itok=nmf2R6NK" width="100" height="100" alt="" /></div>
+										</div>
+									</div>
+									<div class="field field-name-title-field field-type-text field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even">2X T-Sonic <br>Power</div>
+										</div>
+									</div>
+									<div class="body field">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" property="content:encoded" class="field-item even"><h4>Unprecedented Cleansing Efficacy</h4>
+												<p>• 8,000 T-Sonic (transdermal sonic) pulsations per minute at 2X the power<br />
+												• 8 intensities for customizable cleansing</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							
+							<li class="field-item odd" class="field-item even odd">
+								<div id="node-318070" class="node node-product-features view-mode-default" about="/node/318070" typeof="sioc:Item foaf:Document">
+									<div class="field field-name-field-feature-icon field-type-image field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/styles/thumbnail/public/2_secondGeneration_16.png?itok=v654jeNQ" width="100" height="100" alt="" /></div>
+										</div>
+									</div>
+									<div class="field field-name-title-field field-type-text field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even">2nd Generation Brush Head</div>
+										</div>
+									</div>
+									<div class="body field">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" property="content:encoded" class="field-item even">
+												<h4>Completely Optimized Design</h4>
+												<p>• 50% bigger brush head for more efficient cleansing<br />
+												• Longer touch-points extend reach and enhance softness<br />
+												• Thicker silicone body for enhanced comfort and performance</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							
+							<li class="field-item even" class="field-item even odd even">
+								<div id="node-318073" class="node node-product-features view-mode-default" about="/node/318073" typeof="sioc:Item foaf:Document">
+									<div class="field field-name-field-feature-icon field-type-image field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/styles/thumbnail/public/3_uniqueDesign_17.png?itok=BfyDk8AH" width="100" height="100" alt="" /></div>
+										</div>
+									</div>
+									<div class="field field-name-title-field field-type-text field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even">Unique Silicone Design</div>
+										</div>
+									</div>
+									<div class="body field">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" property="content:encoded" class="field-item even"><h4>Extra Gentle &amp; Hygienic</h4>
+												<p>• Even softer touch-points are extremely gentle on the skin<br />
+												• Ultra-hygienic silicone is nonporous to resist bacteria buildup<br />
+												• 35X more hygienic than standard cleansing brushes</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							
+							<li class="field-item odd" class="field-item even odd even odd">
+								<div id="node-318076" class="node node-product-features view-mode-default" about="/node/318076" typeof="sioc:Item foaf:Document">
+									<div class="field field-name-field-feature-icon field-type-image field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/styles/thumbnail/public/4_threeZone_15.png?itok=LeYkN8sN" width="100" height="100" alt="" /></div>
+										</div>
+									</div>
+									<div class="field field-name-title-field field-type-text field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even">3-Zone Brush</div>
+										</div>
+									</div>
+									<div class="body field">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" property="content:encoded" class="field-item even">
+												<h4>Suits Every Skin Type</h4>
+												<p>• Thinner touch-points gently cleanse sensitive and normal skin<br />
+												• Thicker touch-points for precision cleansing<br />
+												• Broader touch-points on the reverse side address oilier skin</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							
+							<li class="field-item even" class="field-item even odd even odd even">
+								<div id="node-318079" class="node node-product-features view-mode-default" about="/node/318079" typeof="sioc:Item foaf:Document">
+									<div class="field field-name-field-feature-icon field-type-image field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/styles/thumbnail/public/5_value_16.png?itok=97BxpG6z" width="100" height="100" alt="" /></div>
+										</div>
+									</div>
+									<div class="field field-name-title-field field-type-text field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even">Exceptional Value</div>
+										</div>
+									</div>
+									<div class="body field">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" property="content:encoded" class="field-item even">
+												<h4>A Skin Care Investment</h4>
+												<p>• No replacement brush heads needed<br />
+												• 2-Year Limited Warranty<br />
+												• 10-Year Quality Guarantee</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							
+							<li class="field-item odd" class="field-item even odd even odd even odd">
+								<div id="node-318082" class="node node-product-features view-mode-default" about="/node/318082" typeof="sioc:Item foaf:Document">
+									<div class="field field-name-field-feature-icon field-type-image field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/styles/thumbnail/public/6_smartDesign_16.png?itok=tMWXO8Nt" width="100" height="100" alt="" /></div>
+										</div>
+									</div>
+									<div class="field field-name-title-field field-type-text field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even">Smart Swedish Design</div>
+										</div>
+									</div>
+									<div class="body field">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" property="content:encoded" class="field-item even">
+												<h4>Designed Around Your Life</h4>
+												<p>• 100% waterproof for use in bath or shower<br />
+												• 300 uses per full charge</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Overlay image in Features block -->
+					<picture class="features-overlay-image">
+						<source media="(min-width: 992px)" srcset="images/features_girl.png">
+						<img src="">
+					</picture>
+
+					<div class="clearfix"></div>
+				</div>
+	  
+	  
+  
+				<div class="e-commerce">
+					<div class="row">
+						<div class="small-12 medium-6 columns">
+							<div class="commerce-product-field commerce-product-field-field-product-image field-field-product-image node-317707-product-field-product-image">
+								<div class="row collapse">
+									<div class="small-12 medium-12 large-10 columns image-container-ecommerce">
+										<ul data-orbit data-options="bullets:true; animation: 'fade'; animation_speed:10;navigation_arrows:false">
+											<li class="field-item even" class="field-item even"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/03-product_425x523_Pink.png" width="425" height="523" alt="LUNA mini™ 2 Pearl Pink" title="FOREO LUNA mini™ 2 Pearl Pink" /></li>
+											<li class="field-item odd" class="field-item even odd"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/03-product_BACK_425x523_Pink.png" width="425" height="523" /></li>
+											<li class="field-item even" class="field-item even odd even"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/06-Luna-Mini-2-packaging-05.png" width="425" height="523" alt="Luna 2 Mini Packaging" title="Luna 2 Mini Packaging" /></li>
+											<li class="field-item odd" class="field-item even odd even odd"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/06-Luna-Mini-2-packaging-06.png" width="425" height="523" alt="Luna 2 Mini Package" title="Luna 2 Mini Package" /></li>
+										</ul>
+									</div>
+									<div class="hidden-for-small medium-12 large-2 columns thumbs-container-ecommerce">
+										<ul class="thumbs">
+											<li class="field-item even" class="field-item even"><a data-orbit-link = "0"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/styles/thumbnail/public/03-product_425x523_Pink.png?itok=gHv81UYZ" width="81" height="100" alt="LUNA mini™ 2 Pearl Pink" title="FOREO LUNA mini™ 2 Pearl Pink" /></a></li>
+											<li class="field-item odd" class="field-item even odd"><a data-orbit-link = "0"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/styles/thumbnail/public/03-product_BACK_425x523_Pink.png?itok=NJR0-zkS" width="81" height="100" /></a></li>
+											<li class="field-item even" class="field-item even odd even"><a data-orbit-link = "0"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/styles/thumbnail/public/06-Luna-Mini-2-packaging-05.png?itok=q78A_B67" width="81" height="100" alt="Luna 2 Mini Packaging" title="Luna 2 Mini Packaging" /></a></li>
+											<li class="field-item odd" class="field-item even odd even odd"><a data-orbit-link = "0"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/styles/thumbnail/public/06-Luna-Mini-2-packaging-06.png?itok=A0bAnJc3" width="81" height="100" alt="Luna 2 Mini Package" title="Luna 2 Mini Package" /></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+							<div class="video-360-wrapper">
+								<div class="field field-name-field-small-video field-type-text-long field-label-hidden field-wrapper">
+									<div class="field-items" class="field-items">
+									<div class="field-item even" class="field-item even">
+										<p><a href="//fast.wistia.net/embed/iframe/rqzmivk185?popover=true" class="wistia-popover[height=440,playerColor=7b796a,width=782]"><img src="https:///embed-ssl.wistia.com/deliveries/9be13297907c48b59017a072fb7f55f20448192f.jpg?image_play_button=true&amp;image_play_button_color=7b796ae0&amp;image_crop_resized=81x81" style="margin-top:-12px" alt="" /></a></p>
+										<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/popover-v1.js"></script>
+									</div>
+									</div>
+								</div>
+								<span class="small-video-play">VIDEO</span>
+								<div class="commerce-product-field commerce-product-field-field-360-view field-field-360-view node-317707-product-field-360-view">
+									<div class="field field-name-field-360-view field-type-image field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items">
+											<div class="field-item even" class="field-item even">
+												<div id='container-1' class="container">
+													<div class="threesixty product-1 ">
+														<div class="spinner spinner-1 ">
+															<span>0%</span>
+														</div>
+														<ol class="threesixty_images threesixty_images-1 width-500 height-500 navigation-yes">
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10000-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10001-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10002-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10003-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10004-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10005-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10006-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10007-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10008-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10009-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10010-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10011-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10012-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10013-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10014-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10015-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10016-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10017-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10018-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10019-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10020-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10021-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10022-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10023-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10024-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10025-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10026-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10027-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10028-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10029-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10030-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10031-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10032-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10033-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10034-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10035-min_0.png" alt="" /></li>
+															<li><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/10036-min_0.png" alt="" /></li>
+														</ol>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<span class="trigger-360" id="button-360-desktop">VIEW</span>
+							</div>
+						</div>
+						<div class="small-12 medium-6 columns">
+							<div class="clearfix">
+								<div class="left">
+									<h1 itemprop="name"  class="node-title">
+										<div class="word-wrap">
+											<span class="word-1 word-luna">LUNA </span><span class="word-2 word-mini">mini </span><span class="word-3 word-2">2 </span>
+										</div>
+									</h1>
+								</div>
+								<div class="field field-name-field-reviews field-type-fivestar field-label-hidden field-wrapper">
+									<div class="field-items" class="field-items">
+										<div class="field-item even" class="field-item even">
+											<div class="clearfix fivestar-average-stars fivestar-average-text">
+												<div class="fivestar-static-item">
+													<div class="form-item form-type-item">
+														<div class="fivestar-outline">
+															<div class="fivestar-widget-static fivestar-widget-static-vote fivestar-widget-static-5 clearfix">
+																<div class="star star-1 star-odd star-first"><span class="on">4.73077</span></div>
+																<div class="star star-2 star-even"><span class="on"></span></div>
+																<div class="star star-3 star-odd"><span class="on"></span></div>
+																<div class="star star-4 star-even"><span class="on"></span></div>
+																<div class="star star-5 star-odd star-last"><span class="on" style="width: 73.077%"></span></div>
+															</div>
+														</div>
+														<div class="description">
+															<div class="fivestar-summary fivestar-summary-average-count"> <span class="total-votes">Overall rating based on <span >75</span> reviews</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h2>
+								<div class="field field-name-field-body-plain-2 field-type-text-long field-label-hidden field-wrapper">
+									<div class="field-items" class="field-items">
+										<div class="field-item even" class="field-item even">
+											<p>Cool &amp; Customizable Face Brush</p>
+										</div>
+									</div>
+								</div>
+							</h2>
+							<div class="body field">
+								<div class="field-items" class="field-items">
+									<div class="field-item even" property="content:encoded" class="field-item even">
+										<p>The LUNA mini 2 is an enhanced T-Sonic™ face brush with eight adjustable intensities for a fully customizable cleansing experience. The updated 3-zone face brush is optimized for all skin types and comes in six exciting new colors.</p>
+									</div>
+								</div>
+							</div>
+							<div class="clearfix">
+								<div class="field field-name-field-product-help field-type-text-long field-label-hidden field-wrapper">
+									<div class="field-items" class="field-items">
+										<div class="field-item even" class="field-item even"><h2>Choose your sonic facial brush:</h2></div>
+									</div>
+								</div>
+								<div class="field field-name-field-product-reference field-type-commerce-product-reference field-label-hidden field-wrapper">
+									<div class="field-items" class="field-items">
+										<div class="field-item even" class="field-item even">
+											<form class="commerce-add-to-cart commerce-cart-add-to-cart-form-1261-1368-1264-1267-1270-1273 in-stock" action="/cart/add" method="post" id="commerce-cart-add-to-cart-form-1261-1368-1264-1267-1270-1273" accept-charset="UTF-8">
+												<div>
+													<div class="attribute-widgets">
+														<div class="form-item form-type-commerce-fancy-attributes form-item-attributes-field-colors">
+															<label for="edit-attributes-field-colors">Colors </label>
+															<div id="edit-attributes-field-colors" class="form-radios">
+																<div class="color-picker-index colors-column-1">
+																	<div class="form-item form-type-radio form-item-attributes-field-colors">
+																		<input type="radio" id="edit-attributes-field-colors-340" name="attributes[field_colors]" value="340" class="form-radio" />
+																		<label class="option" for="edit-attributes-field-colors-340">LUNA mini™ 2 Aquamarine </label>
+																		<div class="description">
+																			<div class="term-340">
+																				<div class="field field-name-field-color-hex field-type-text field-label-hidden field-wrapper">
+																					<div class="field-items" class="field-items">
+																						<div class="field-item even" class="field-item even"><div class="border"><div title="LUNA mini™ 2 Aquamarine" style="background-color: #00a9f7;" class="commerce-fancy-attributes-color 00a9f7"></div></div><div class="color-label">LUNA mini™ 2 Aquamarine</div></div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="form-item form-type-radio form-item-attributes-field-colors">
+																		<input type="radio" id="edit-attributes-field-colors-334" name="attributes[field_colors]" value="334" class="form-radio" />
+																		<label class="option" for="edit-attributes-field-colors-334">LUNA mini™ 2 Fuchsia </label>
+																		<div class="description">
+																			<div class="term-334">
+																				<div class="field field-name-field-color-hex field-type-text field-label-hidden field-wrapper">
+																					<div class="field-items" class="field-items">
+																						<div class="field-item even" class="field-item even"><div class="border"><div title="LUNA mini™ 2 Fuchsia" style="background-color: #fc3595;" class="commerce-fancy-attributes-color fc3595"></div></div><div class="color-label">LUNA mini™ 2 Fuchsia</div></div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="color-picker-index colors-column-2">
+																	<div class="form-item form-type-radio form-item-attributes-field-colors">
+																		<input type="radio" id="edit-attributes-field-colors-349" name="attributes[field_colors]" value="349" class="form-radio" />
+																		<label class="option" for="edit-attributes-field-colors-349">LUNA mini™ 2 Midnight </label>
+																		<div class="description">
+																			<div class="term-349">
+																				<div class="field field-name-field-color-hex field-type-text field-label-hidden field-wrapper">
+																					<div class="field-items" class="field-items">
+																						<div class="field-item even" class="field-item even"><div class="border"><div title="LUNA mini™ 2 Midnight" style="background-color: #000000;" class="commerce-fancy-attributes-color 000000"></div></div><div class="color-label">LUNA mini™ 2 Midnight</div></div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="form-item form-type-radio form-item-attributes-field-colors">
+																		<input type="radio" id="edit-attributes-field-colors-331" name="attributes[field_colors]" value="331" checked="checked" class="form-radio" />
+																		<label class="option" for="edit-attributes-field-colors-331">LUNA mini™ 2 Pearl Pink </label>
+																		<div class="description">
+																			<div class="term-331 description-selected">
+																				<div class="field field-name-field-color-hex field-type-text field-label-hidden field-wrapper">
+																					<div class="field-items" class="field-items">
+																						<div class="field-item even" class="field-item even"><div class="border"><div title="LUNA mini™ 2 Pearl Pink" style="background-color: #facde6;" class="commerce-fancy-attributes-color facde6"></div></div><div class="color-label">LUNA mini™ 2 Pearl Pink</div></div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="color-picker-index colors-column-3">
+																	<div class="form-item form-type-radio form-item-attributes-field-colors">
+																		<input type="radio" id="edit-attributes-field-colors-337" name="attributes[field_colors]" value="337" class="form-radio" />
+																		<label class="option" for="edit-attributes-field-colors-337">LUNA mini™ 2 Sunflower Yellow </label>
+																		<div class="description">
+																			<div class="term-337">
+																				<div class="field field-name-field-color-hex field-type-text field-label-hidden field-wrapper">
+																					<div class="field-items" class="field-items">
+																						<div class="field-item even" class="field-item even"><div class="border"><div title="LUNA mini™ 2 Sunflower Yellow" style="background-color: #ffc800;" class="commerce-fancy-attributes-color ffc800"></div></div><div class="color-label">LUNA mini™ 2 Sunflower Yellow</div></div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="form-item form-type-radio form-item-attributes-field-colors">
+																		<input type="radio" id="edit-attributes-field-colors-465" name="attributes[field_colors]" value="465" class="form-radio" />
+																		<label class="option" for="edit-attributes-field-colors-465">LUNA™ mini 2 Mint </label>
+																		<div class="description">
+																			<div class="term-465">
+																				<div class="field field-name-field-color-hex field-type-text field-label-hidden field-wrapper">
+																					<div class="field-items" class="field-items">
+																						<div class="field-item even" class="field-item even"><div class="border"><div title="LUNA™ mini 2 Mint" style="background-color: #99D7D9;" class="commerce-fancy-attributes-color 99D7D9"></div></div><div class="color-label">LUNA™ mini 2 Mint</div></div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="color-picker-index colors-column-4"></div>
+															</div>
+														</div>
+													</div>
+													<input type="hidden" name="product_id" value="1261" />
+													<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_1261_1368_1264_1267_1270_1273" />
+													<input type="hidden" name="path" value="node/317707" />
+													<div class="product-rating-wrap">
+														<div class="price-block">
+															<div class="field field-name-commerce-price field-type-commerce-price field-label-hidden field-wrapper">
+																<div class="field-items" class="field-items">
+																	<div class="field-item even" class="field-item even">
+																		<table class="commerce-price-savings-formatter-prices commerce-price-savings-formatter-prices-count-1 commerce-price-savings-formatter-prices-unchanged">
+																			<tbody>
+																				<tr class="commerce-price-savings-formatter-price odd">
+																					<td class="price-label">Price:</td><td class="price-amount">$139</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div id="edit-line-item-fields" class="form-wrapper"></div>
+													<input type="hidden" name="quantity" value="1" />
+													<div class="buy-now-wrapper">
+														<div onclick=dataLayer.push({"event":"addToCart","ecommerce":{"add":{"products":[{"name":"LUNA_mini2PearlPink","id":"1547","price":139,"brand":"LUNA","category":"","variant":"LUNA_mini2PearlPink","quantity":1}]},"currencyCode":"USD"}})><input class="buy-me-now right form-submit" type="submit" id="edit-submit" name="op" value="BUY NOW" /></div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="commerce-product-field commerce-product-field-field-original-set-value field-field-original-set-value node-317707-product-field-original-set-value">
+									<div class="field field-name-field-original-set-value field-type-text field-label-hidden field-wrapper">
+										<div class="field-items" class="field-items"></div>
+									</div>
+								</div>
+							</div>
+							<!-- Commerce section 'Perks of shopping' block  -->
+							<div class="shopping-perks product-display">
+								<div class="medium-4 small-4 col">
+									<div class="shopping-perks-icon"></div>
+									<p>Free shipping</p>
+									<p>Within 3-5 days</p>
+								</div>
+								<div class="medium-4 small-4 col">
+									<div class="shopping-perks-icon"></div>
+									<p>Warranty</p>
+									<p>2 years</p>
+								</div>
+								<div class="medium-4 small-4 col">
+									<div class="shopping-perks-icon"></div>
+									<p>Quality guarantee</p>
+									<p>10 years</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				
+				
+				<div class="how_to_instructions">
+					<div class="row">
+						<div class="small-12 columns">
+							<h3>
+								<div class="field field-name-field-name field-type-text field-label-hidden field-wrapper">
+									<div class="field-items" class="field-items">
+										<div class="field-item even" class="field-item even">EFFORTLESS SKINCARE EVERY DAY</div>
+									</div>
+								</div>
+							</h3>
+							<div class="field field-name-field-user-manual field-type-file field-label-hidden field-wrapper">
+								<div class="field-items" class="field-items">
+									<div class="field-item even" class="field-item even"><span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="images/application-pdf.png" /> <a href="https://www.foreo.com/sites/default/files/FOREO_LUNA_mini_2_manual_english.pdf" type="application/pdf; length=2095577" title="FOREO_LUNA_mini_2_manual_english.pdf">DOWNLOAD FOREO LUNA MINI 2 MANUAL (PDF)</a></span></div>
+								</div>
+							</div>
+							<div class="how_to_steps">
+								<ul class="items-3" data-orbit data-options="timer: false; circular: false; animation: fade; navigation_arrows: true">
+									<li class="field-item even" class="field-item even">
+										<div id="node-318043" class="node node-how-to-ins view-mode-default" about="/node/318043" typeof="sioc:Item foaf:Document">
+											<div class="image">
+												<div class="field-items" class="field-items">
+													<div class="field-item even" class="field-item even"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/LUNAmini2-PP-HowtoUse-Step1%28234x314%29_1.jpg" width="234" height="314" alt="" /></div>
+												</div>
+											</div>
+											<span class="number">
+												<div class="field field-name-field-order-number field-type-text field-label-hidden field-wrapper">
+													<div class="field-items" class="field-items">
+														<div class="field-item even" class="field-item even">01.</div>
+													</div>
+												</div>
+											</span>
+											<div class="field field-name-title-field field-type-text field-label-hidden field-wrapper">
+												<div class="field-items" class="field-items">
+													<div class="field-item even" class="field-item even">Apply Cleanser</div>
+												</div>
+											</div>
+											<div class="body field">
+												<div class="field-items" class="field-items">
+													<div class="field-item even" property="content:encoded" class="field-item even">
+														<p>Dampen your face and apply your favorite cleanser. Wet the LUNA mini 2 and turn on.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="field-item odd" class="field-item even odd">
+										<div id="node-318046" class="node node-how-to-ins view-mode-default" about="/node/318046" typeof="sioc:Item foaf:Document">
+											<div class="image">
+												<div class="field-items" class="field-items">
+													<div class="field-item even" class="field-item even"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/LUNAmini2-PP-HowtoUse-Step2%28234x314%29_0.jpg" width="234" height="314" alt="" /></div>
+												</div>
+											</div>
+											<span class="number">
+												<div class="field field-name-field-order-number field-type-text field-label-hidden field-wrapper">
+													<div class="field-items" class="field-items">
+														<div class="field-item even" class="field-item even">02.</div>
+													</div>
+												</div>
+											</span>
+											<div class="field field-name-title-field field-type-text field-label-hidden field-wrapper">
+												<div class="field-items" class="field-items">
+													<div class="field-item even" class="field-item even">Cleanse</div>
+												</div>
+											</div>
+											<div class="body field">
+												<div class="field-items" class="field-items">
+													<div class="field-item even" property="content:encoded" class="field-item even">
+														<p>Gently glide the LUNA mini 2’s brush in circular motions over your face for 1 minute.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="field-item even" class="field-item even odd even">
+										<div id="node-318049" class="node node-how-to-ins view-mode-default" about="/node/318049" typeof="sioc:Item foaf:Document">
+											<div class="image">
+												<div class="field-items" class="field-items">
+													<div class="field-item even" class="field-item even"><img typeof="foaf:Image" src="https://www.foreo.com/sites/default/files/LUNAmini2-PP-HowtoUse-Step3%28234x314%29_0.jpg" width="234" height="314" alt="" /></div>
+												</div>
+											</div>
+											<span class="number">
+												<div class="field field-name-field-order-number field-type-text field-label-hidden field-wrapper">
+													<div class="field-items" class="field-items">
+														<div class="field-item even" class="field-item even">03.</div>
+													</div>
+												</div>
+											</span>
+											<div class="field field-name-title-field field-type-text field-label-hidden field-wrapper">
+												<div class="field-items" class="field-items">
+													<div class="field-item even" class="field-item even">Rinse</div>
+												</div>
+											</div>
+											<div class="body field">
+												<div class="field-items" class="field-items">
+													<div class="field-item even" property="content:encoded" class="field-item even">
+														<p>Rinse and dry your face. Apply your additional skincare products as desired.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			  
+			  
+				<div class="shopping-perks full-width-block">
+					<div class="shopping-perks-title-wrapper">
+						<h3>The perks of shopping on foreo.com</h3>
+					</div>
+					<div class="row">
+						<div class="medium-4 small-12 col">
+							<div class="shopping-perks-icon icon-1"></div>
+							<p>Free shipping</p>
+							<p>Within 3-5 days</p>
+						</div>
+						<div class="medium-4 small-12 col">
+							<div class="shopping-perks-icon icon-2"></div>
+							<p>Warranty</p>
+							<p>2 years</p>
+						</div>
+						<div class="medium-4 small-12 col">
+							<div class="shopping-perks-icon icon-3"></div>
+							<p>Quality guarantee</p>
+							<p>10 years</p>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="instagram-recommendation-block">
+					<h3>GET OBSESSED #FOREO</h3>
+					<div class="row">
+						<div class="small-12 columns">
+							<div class="instagram-post instagram-post-0" id="instagram-post-0">
+								<a href="https://www.instagram.com/p/BVn97_mBx3M/?hl=en&taken-by=foreo" target="_blank">
+									<img src="https://www.foreo.com/sites/default/files/Instagram1-min.jpg" alt="">
+								</a>
+							</div>
+							<div class="instagram-post instagram-post-1" id="instagram-post-1">
+								<a href="https://www.instagram.com/p/BB0SxJHOEF1/?hl=en&taken-by=foreo" target="_blank">
+									<img src="https://www.foreo.com/sites/default/files/Instagram2-min.jpg" alt="">
+								</a>
+							</div>
+							<div class="instagram-post instagram-post-2" id="instagram-post-2">
+								<a href="https://www.instagram.com/p/BVGf41EhCOC/?hl=en&taken-by=foreo" target="_blank">
+									<img src="https://www.foreo.com/sites/default/files/Instagram3-min.jpg" alt="">
+								</a>
+							</div>
+							<div class="instagram-post instagram-post-3" id="instagram-post-3">
+								<a href="https://www.instagram.com/p/BYLZIj_HEDy/?hl=en&taken-by=foreo_mea" target="_blank">
+									<img src="https://www.foreo.com/sites/default/files/Instagram4-min.jpg" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
+    </main>
+	
+	
+	
+  <!-- Footer -->
+	<footer class="footer-links">
+		<div class="row">
+			<div class="footer-bottom">
+				<div class="show-for-small small-12 columns">
+					<div class="footer-logo">
+						<a href="/"><img src="images/logo.svg"/></a>
+					</div>
+				</div>
+				<div class="small-12 medium-6 columns">
+					<div class="copyright-text">
+						<p>© 2018              FOREO All rights reserved</p>
+					</div>
+				</div>
+				<div class="hide-for-medium-down medium-6 columns">
+					<div class="footer-logo">
+						<a href="/"><img src="images/logo.svg"/></a>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</footer>
+</div>
+
+
+
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/picture/picturefill2/picturefill.min.js?v=2.3.1"></script>
+<script type="text/javascript" src="https://www.foreo.com/sites/all/modules/contrib/picture/picture.min.js?v=7.59"></script>
+</body>
+</html>
